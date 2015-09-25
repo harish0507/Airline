@@ -6,7 +6,7 @@ var http = require('http'),
     repl = require("repl"),
     app = require('./app')(flights, db);
 
-http.createServer(app).listen(app.get('port'), app.get("ip"), function(){
+http.createServer(app).listen(process.env.OPENSHIFT_NODEJS_PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 

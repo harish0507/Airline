@@ -13,7 +13,6 @@ module.exports = function(flights, db) {
   
   // all environments
   app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 3000);
-  app.set("ip", process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'jade');
   app.use(express.favicon());
