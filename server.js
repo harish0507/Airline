@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 var http = require('http'),
     flights = require('./data'),
     db = require('./db'),
