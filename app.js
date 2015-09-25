@@ -12,7 +12,7 @@ module.exports = function(flights, db) {
   var app = express();
   
   // all environments
-  app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 3000);
+  //app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080);
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'jade');
   app.use(express.favicon());
