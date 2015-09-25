@@ -41,9 +41,9 @@ module.exports = function(flights, db) {
   });
   
   // development only
-  if ('development' == app.get('env')) {
-    app.use(express.errorHandler());
-  }
+  //if ('development' == app.get('env')) {
+  //  app.use(express.errorHandler());
+  //}
   
   app.get('/', routes.list);
   app.get('/flight/:number', routes.flight);
