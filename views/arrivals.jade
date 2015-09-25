@@ -1,0 +1,12 @@
+extends layout
+
+block content
+ h1= title
+ if lastNumber === undefined
+  p= "Last Viewed Flight: You didn't view a flight yet!"
+ else
+  p= "Last Viewed Flight: " + lastNumber
+ ul
+  each flight, index in arrivals
+   - landed = new Date(flight.arrival)
+   li= flight.number + ': ' + flight.origin + " - " + landed

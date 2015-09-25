@@ -1,0 +1,8 @@
+extends layout
+
+block content
+ h1= title
+ form(method="post", class="form-inline", role="form")
+  input(name="username", class="form-control", placeholder="username", required)
+  input(name="password", class="form-control", type="password" placeholder="password", required)
+  input(type="submit", class="btn btn-info", value="Log in")
