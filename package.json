@@ -2,9 +2,9 @@
   "name": "airline",
   "version": "0.0.1",
   "private": true,
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "bin": "./server.js",
   "dependencies": {
