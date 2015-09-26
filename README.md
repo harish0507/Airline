@@ -1,2 +1,2 @@
-# airline
+# Airline
 A Simple Airline Tracker
