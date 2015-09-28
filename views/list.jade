@@ -1,6 +1,8 @@
 extends layout
 
 block content
+ script.
+  $("#home-menu").addClass("active");
  h1= title
  ul
   each flight, index in flights

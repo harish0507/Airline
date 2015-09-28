@@ -10,3 +10,7 @@ block content
   each flight, index in arrivals
    - landed = new Date(flight.arrival)
    li= flight.number + ': ' + flight.origin + " - " + landed
+ script.
+  $(function() {
+   $("#arrival-menu").addClass("active");
+  });

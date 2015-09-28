@@ -1,0 +1,8 @@
+.margin {
+    margin: 5px;
+}
+
+.error {
+    font-weight: bolder;
+    color: red;
+}

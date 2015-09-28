@@ -1,0 +1,8 @@
+extends layout
+
+block content
+ h1= title
+ p= "Flight Number: " + flight.number
+ p= "Origin: " + flight.origin
+ p= "Destination: " + flight.destination
+ a.btn.btn-info(href="/") Back

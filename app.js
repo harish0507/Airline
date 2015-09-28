@@ -51,7 +51,7 @@ module.exports = function(flights, db) {
   app.get('/arrivals', routes.arrivals);
   app.get("/login", routes.login);
   app.post("/login", passport.authenticate("local", {
-    failureRedirect: "/login",
+    failureRedirect: "/login?status=0",
     successRedirect: "/user"
   }));
   app.get("/user", routes.user);

@@ -28,9 +28,12 @@ module.exports = function(flights) {
     var number = req.param('number');
     req.session.lastNumber = number;
     if (typeof flights[number] === 'undefined') {
-      res.status(404).json({status: 'Not Found'})
+      res.status(404).render('404', { title: '404 - File Not Found!' });
     } else {
-      res.json(flights[number].getInfo());
+      res.render("flight", {
+        title: "Flight Info",
+        flight: flights[number].getInfo()
+      });
     }
   };
   
@@ -47,7 +50,7 @@ module.exports = function(flights) {
   
   functions.list = function(req, res) {
     res.render("list", {
-      title: "All Flight",
+      title: "All Flights",
       flights: flights
     });
   };
@@ -72,15 +75,16 @@ module.exports = function(flights) {
   };
   
   functions.user = function(req, res) {
-    if (req.session.passport === undefined) {
+    if (req.session.passport === undefined || req.session.passport.user === undefined) {
       res.redirect("/login");
     } else {
-      res.render("user", {title: "Welcone!", user: req.session.passport.user});
+      res.render("user", {title: "Welcome!", user: req.session.passport.user});
     }
   };
   
   functions.logout = function(req, res) {
-    req.session.destroy();
+    //req.session.destroy();
+    req.logout();
     res.redirect("/login");
   };
   

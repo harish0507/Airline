@@ -3,6 +3,15 @@ extends layout
 block content
  h1= title
  form(method="post", class="form-inline", role="form")
-  input(name="username", class="form-control", placeholder="username", required)
-  input(name="password", class="form-control", type="password" placeholder="password", required)
-  input(type="submit", class="btn btn-info", value="Log in")
+  input(name="username", class="form-control margin", placeholder="username", required)
+  input(name="password", class="form-control margin", type="password" placeholder="password", required)
+  input(type="submit", class="btn btn-primary margin", value="Log in")
+ p.error.margin
+ script.
+  $(function() {
+   $("#login-menu").addClass("active");
+   var query = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&')[0].split("=");
+   if(query[0] == "status" && query[1] == 0) {
+    $(".error").text("username or password invalid!");
+   }
+  });
